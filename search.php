@@ -57,21 +57,12 @@
 
         echo "<div class='container'>";
 		echo "<div class='row-fluid'>";
-<<<<<<< HEAD
 
 			echo "<div class='col-xs-6'>";
 			echo "<div class='table-responsive'>";
 
 				echo "<table class='table table-hover table-inverse'>";
 
-=======
-		
-			echo "<div class='col-xs-6'>";
-			echo "<div class='table-responsive'>";
-			
-				echo "<table class='table table-hover table-inverse'>";
-				
->>>>>>> fcda8a3 (Add files via upload)
 				echo "<tr>";
 				echo "<th>ID</th>";
 				echo "<th>Course Name</th>";
@@ -82,11 +73,7 @@
                 if ($result->num_rows > 0) {
 					// output data of each row
 					while($row = $result->fetch_assoc()) {
-<<<<<<< HEAD
 
-=======
-							
->>>>>>> fcda8a3 (Add files via upload)
 						echo "<tr>";
 						echo "<td>" . $row["comment_id"] . "</td>";
 						echo "<td>" . $row["course_name"] . "</td>";
@@ -97,15 +84,9 @@
 				} else {
 					echo "0 results";
 				}
-<<<<<<< HEAD
 
 				echo "</table>";
 
-=======
-				
-				echo "</table>";
-            
->>>>>>> fcda8a3 (Add files via upload)
             echo "</div>";
             echo "</div>";
         echo "</div>";
@@ -116,10 +97,6 @@
         echo "</br>";
     ?>
 
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> fcda8a3 (Add files via upload)
 
 </html>
