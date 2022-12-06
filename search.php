@@ -52,41 +52,53 @@
         }
         echo "<br>";
 
-        $sql = "SELECT comment_id, course_name, grade, comment from comment where username = '$username'";
-        $result = $db->query($sql);
+        $sql = "SELECT couse_id, crn, class_id, professor_id from course"; /* where username = '$username'" */
+
+        $sql1_1 = "SELECT class.course_name, class.course_description
+        FROM class
+        INNER JOIN course ON class.course_id = course.course_id";
+
+        $sql1_2 = "SELECT class.course_name AS course_name, class.course_description AS course_description, professor.firstName AS firstName, professor.lastName AS lastName
+        FROM ((class
+        INNER JOIN course ON class.class_id = course.class_id
+        INNER JOIN professor ON class.professor_id = professor.professor_id))";
+
+        $result = $db->query($sql1_2);
 
         echo "<div class='container'>";
 		echo "<div class='row-fluid'>";
-
+		
 			echo "<div class='col-xs-6'>";
 			echo "<div class='table-responsive'>";
-
+			
 				echo "<table class='table table-hover table-inverse'>";
-
+				
 				echo "<tr>";
-				echo "<th>ID</th>";
 				echo "<th>Course Name</th>";
-				echo "<th>Grade</th>";
-                echo "<th>Comment</th>";
+				echo "<th>Course Description</th>";
+				// echo "<th>Class ID</th>";
+                echo "<th>Professor First</th>";
+                echo "<th>Professor Last</th>";
 				echo "</tr>";
 
-                if ($result->num_rows > 0) {
+                if ( && $result->num_rows > 0) {
 					// output data of each row
+                    //echo $result->num_rows;
 					while($row = $result->fetch_assoc()) {
-
+							
 						echo "<tr>";
-						echo "<td>" . $row["comment_id"] . "</td>";
 						echo "<td>" . $row["course_name"] . "</td>";
-						echo "<td>" . $row["grade"] . "</td>";
-                        echo "<td>" . $row["comment"] . "</td>";
+						echo "<td>" . $row["course_description"] . "</td>";
+						echo "<td>" . $row["firstName"] . "</td>";
+                        echo "<td>" . $row["lastName"] . "</td>";
 						echo "</tr>";			
 					}
 				} else {
 					echo "0 results";
 				}
-
+				
 				echo "</table>";
-
+            
             echo "</div>";
             echo "</div>";
         echo "</div>";
@@ -97,6 +109,6 @@
         echo "</br>";
     ?>
 
-
+        
 
 </html>
