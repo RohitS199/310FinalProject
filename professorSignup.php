@@ -62,7 +62,7 @@
                             $yearsAtSchool = $_POST['yearsAtSchool'];
                             $confirmPassword = $_POST['confirmPassword'];
                             if($password == $confirmPassword){
-                                $query = "INSERT INTO `Professor` (`professor_id`, `firstName`, `email`, `lastName`, `phone_number`, `password`, `officeLocation`, `yearsatSchool`) VALUES (NULL, '$username', '$password', '$lastName', '$phoneNumber', '$password', '$officeLocation', '$yearsAtSchool')";
+                                $query = "INSERT INTO `Professor` (`professor_id`, `firstName`, `email`, `lastName`, `phone_number`, `password`, `officeLocation`, `yearsatSchool`) VALUES (NULL, $firstName, $email, $lastName, $phoneNumber, $password, $officeLocation, $yearsAtSchool)";
                                 include 'config.php';
                                 $result = mysqli_query($db, $query);
                                 if($result){
