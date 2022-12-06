@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Sign Up</h1>
+                <h1>Add Comment</h1>
                 <form action="addcomment.php" method="post">
                     <div class="form-group">
                         <label for="grade">
@@ -25,27 +25,27 @@
                         <input type="text" name="comment" class="form-control" id="comment">
                     </div>
                     <div class="form-group">
-                        <label for="userType">User Type</label>
-                        <select name="userType" class="form-control" id="userType">
+                        <label for="course_name">Class Name</label>
+                        <select name="course_name" class="form-control" id="course_name">
                             <?php
                                 include 'config.php';
                                 $query = "SELECT * FROM `Class`";
                                 $result = mysqli_query($db, $query);
                                 while($row = mysqli_fetch_assoc($result)) {
-                                    echo "<option value='" . $row['class_id'] . "'>" . $row['course_name'] . "</option>";
+                                    echo "<option value='" . $row['course_name'] . "'>" . $row['course_name'] . "</option>";
                                 }
                             ?>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="userType">User Type</label>
-                        <select name="userType" class="form-control" id="userType">
+                        <label for="professor_last_name">Professor First Name</label>
+                        <select name="professor_last_name" class="form-control" id="professor_last_name">
                             <?php
                                 include 'config.php';
                                 $query = "SELECT * FROM `Professor`";
                                 $result = mysqli_query($db, $query);
                                 while($row = mysqli_fetch_assoc($result)) {
-                                    echo "<option value='" . $row['professor_id'] . "'>" . $row['firstName'] . "</option>";
+                                    echo "<option value='" . $row['lastName'] . "'>" . $row['lastName'] . "</option>";
                                 }
                             ?>
                         </select>
@@ -57,34 +57,28 @@
                             $course_name = $_POST['course_name'];
                             $grade = $_POST['grade'];
                             $comment = $_POST['comment'];
-
+                            $professor_last_name = $_POST['professor_last_name'];
+                            
                             session_start();
-                            include 'config.php';
-                            // get the username from the session
                             $username = $_SESSION['username'];
-                            
-                            
+                            $username = 'nikki';
+
                             // given the username, get the user_id
-                            $query1 = "SELECT user_id FROM User WHERE username = '$username'";
-                            //given the classname, get the class_id
-                            $query2 = "SELECT class_id FROM Class WHERE course_name = '$course_name'";
-                            //given the professor's last name, get the professor_id
-                            $query3 = "SELECT professor_id FROM Professor WHERE last_name = '$professor_last_name'";
-
-
+                            include 'config.php';
+                            $query1 = "SELECT user_id FROM `Users` WHERE `userName` LIKE '$username'";
                             $result1 = mysqli_query($db, $query1);
-                            $result2 = mysqli_query($db, $query2);
-                            $result3 = mysqli_query($db, $query3);
-
-                            // get the user_id from the result
                             $row1 = mysqli_fetch_assoc($result1);
                             $user_id = $row1['user_id'];
 
-                            // get the class_id from the result
+                            //given the classname, get the class_id
+                            $query2 = "SELECT class_id FROM `Class` WHERE `course_name` LIKE '$course_name'";
+                            $result2 = mysqli_query($db, $query2);
                             $row2 = mysqli_fetch_assoc($result2);
                             $class_id = $row2['class_id'];
 
-                            // get the professor_id from the result
+                            //given the professor's last name, get the professor_id
+                            $query3 = "SELECT professor_id FROM `Professor` WHERE `lastName` LIKE '$professor_last_name'";
+                            $result3 = mysqli_query($db, $query3);
                             $row3 = mysqli_fetch_assoc($result3);
                             $professor_id = $row3['professor_id'];
 
