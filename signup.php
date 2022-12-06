@@ -92,7 +92,7 @@
                                     header("Location: home.php");
                                 }
                                 else {
-                                    header("Location: admin.php");
+                                    header("Location: adminhome.php");
                                 }
                             } else {
                                 echo "Passwords do not match";

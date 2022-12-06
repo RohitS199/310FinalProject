@@ -57,12 +57,12 @@
 
         echo "<div class='container'>";
 		echo "<div class='row-fluid'>";
-		
+
 			echo "<div class='col-xs-6'>";
 			echo "<div class='table-responsive'>";
-			
+
 				echo "<table class='table table-hover table-inverse'>";
-				
+
 				echo "<tr>";
 				echo "<th>ID</th>";
 				echo "<th>Course Name</th>";
@@ -73,7 +73,7 @@
                 if ($result->num_rows > 0) {
 					// output data of each row
 					while($row = $result->fetch_assoc()) {
-							
+
 						echo "<tr>";
 						echo "<td>" . $row["comment_id"] . "</td>";
 						echo "<td>" . $row["course_name"] . "</td>";
@@ -84,9 +84,9 @@
 				} else {
 					echo "0 results";
 				}
-				
+
 				echo "</table>";
-            
+
             echo "</div>";
             echo "</div>";
         echo "</div>";
@@ -97,6 +97,6 @@
         echo "</br>";
     ?>
 
-        
+
 
 </html>

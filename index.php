@@ -51,7 +51,7 @@
                         session_start();
                         if($userType == "Admin") {
                             $_SESSION['username'] = $_POST['username'];
-                            header("Location: admin.php");
+                            header("Location: adminhome.php");
                         } else if($userType == "Student") {
                             $_SESSION['username'] = $username;
                             header("Location: home.php");
