@@ -47,6 +47,11 @@
                     ?>
                 </form>
             </div>
+            <!-- make a button to redirect back to adminhome.php -->
+            <br>
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" onclick="window.location.href='adminhome.php'">Back to Admin Home</button>
+            </div>
         </div>
     </div>
 </html>

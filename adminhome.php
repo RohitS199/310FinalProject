@@ -191,7 +191,13 @@
 		</tbody>
     </table>
     </div>
-
+    <!-- make a button using boostrap style that will redirect to addclass.php -->
+    <!-- <button type="button" class="btn btn-primary" onclick="window.location.href='addclass.php'">Add Class</button> -->
+    <!-- center the button on the page -->
+    <div class="text-center">
+        <button type="button" class="btn btn-primary" onclick="window.location.href='addclass.php'">Add class</button>
+    </div>
+    
     <div class="container">
     <h1 class="text-center">Comments</h1>
 	<table id="commentsTable" class="table table-bordered table-responsive-md table-striped text-center">
