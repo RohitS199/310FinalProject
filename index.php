@@ -31,14 +31,14 @@
                       <label for="password">Password</label>
                       <input type="password" name="password" class="form-control" id="password">
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
                   <?php
                     
                     
                     if(isset($_POST['username']) && isset($_POST['password'])){
                         $username = $_POST['username'];
                         $password = $_POST['password'];
-                        
+
                         $query = "SELECT * FROM `Users` WHERE `password` LIKE '$password' AND `userName` LIKE '$username';";
                         $query2 = "SELECT user_id FROM `Users` WHERE `password` LIKE '$password' AND `userName` LIKE '$username';";
                         include 'config.php';
@@ -64,11 +64,11 @@
                         }
                     }
                   ?>
-                  <a href="signup.php" class="btn btn-default">User Sign Up</a>
+                  <a href="signup.php" class="btn btn-primary">User Sign Up</a>
                   <!-- make a professor sign up button -->
-                  <a href="professorSignup.php" class="btn btn-default">Professor Sign Up</a>
+                  <a href="professorSignup.php" class="btn btn-primary">Professor Sign Up</a>
                   <!-- make a professor sign in button -->
-                  <a href="professorLogin.php" class="btn btn-default">Professor Sign In</a>
+                  <a href="professorLogin.php" class="btn btn-primary">Professor Sign In</a>
               </form>
           </div>
       </div>
