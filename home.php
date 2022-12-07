@@ -31,65 +31,61 @@
                 <h2>Welcome <?php 
                     session_start();
                     $username = $_SESSION['username'];
+                    $user_id = $_SESSION['user_id'];
                     echo $username;
+                    //echo $user_id;
                 ?> !</h2>
             </div>
         </div>
     </div>
 
-    <?php
-        include 'config.php';
+<div class="container">
+    <h1 class="text-center">Comments</h1>
+	<table id="commentsTable" class="table table-bordered table-responsive-md table-striped text-center">
+		<thead>
+			<tr>
+				<th>ID</th>
+                <th>User ID</th>
+				<th>Course Name</th>
+				<th>Grade</th>
+				<th>Comment</th>
+				<th>Professor ID</th>
+               
+			</tr>
+		</thead>
+		<tbody>
+			<?php 
+			include_once("config.php");
+            if($db === false){
+                die("ERROR: Could not connect. " . mysqli_connect_error());
+            }
+			$sqlQuery = "SELECT comment_id, comment, user_id, course_name, letterGrade, professor_id FROM comment WHERE user_id=$user_id";
+			$result = mysqli_query($db, $sqlQuery) or die("database error:". mysqli_error($db));
+            if ($result->num_rows > 0) {
 
-        if($db === false){
-            die("ERROR: Could not connect. " . mysqli_connect_error());
-        }
-        echo "<br>";
-
-        $sql = "SELECT comment_id, course_name, grade, comment from comment where username = '$username'";
-        $result = $db->query($sql);
-
-        echo "<div class='container'>";
-		echo "<div class='row-fluid'>";
-		
-			echo "<div class='col-xs-6'>";
-			echo "<div class='table-responsive'>";
-			
-				echo "<table class='table table-hover table-inverse'>";
-				
-				echo "<tr>";
-				echo "<th>ID</th>";
-				echo "<th>Course Name</th>";
-				echo "<th>Grade</th>";
-                echo "<th>Comment</th>";
-				echo "</tr>";
-
-                if ($result->num_rows > 0) {
-					// output data of each row
-					while($row = $result->fetch_assoc()) {
-							
-						echo "<tr>";
-						echo "<td>" . $row["comment_id"] . "</td>";
-						echo "<td>" . $row["course_name"] . "</td>";
-						echo "<td>" . $row["grade"] . "</td>";
-                        echo "<td>" . $row["comment"] . "</td>";
-						echo "</tr>";			
-					}
-				} else {
-					echo "0 results";
-				}
-				
-				echo "</table>";
+			while( $row = mysqli_fetch_assoc($result) ) {
+			?>
+			   <tr id="<?php echo $row ['comment_id']; ?>">
+			    <td><?php echo $row ['comment_id']; ?></td>
+			    <td><?php echo $row ['user_id']; ?></td>
+                <td><?php echo $row ['course_name']; ?></td>
+                <td><?php echo $row ['letterGrade']; ?></td> 		   
+                <td><?php echo $row ['comment']; ?></td> 
+                <td><?php echo $row ['professor_id']; ?></td>   
+                
+			   </tr>
+			<?php } 
+            }
+            else {
+                echo "0 results";
+            }
             
-            echo "</div>";
-            echo "</div>";
-        echo "</div>";
-        echo "</div>";
-
-        mysqli_close($link);
-
-        echo "</br>";
-    ?>
-
+            ?>
+		</tbody>
+    </table>
+    </div>
         
+    
+
 
 </html>

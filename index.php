@@ -41,11 +41,14 @@
                         echo $username;
                         echo $password;
                         $query = "SELECT * FROM `Users` WHERE `password` LIKE '$password' AND `userName` LIKE '$username';";
-
+                        $query2 = "SELECT user_id FROM `Users` WHERE `password` LIKE '$password' AND `userName` LIKE '$username';";
                         include 'config.php';
                         $result = $db->query($query);
-                        echo $result->num_rows;
+                        //echo $result->num_rows;
                         $userType = $result->fetch_assoc()['userType'];
+                        $result2 = $db->query($query);
+                        $user_id = $result2->fetch_assoc()['user_id'];
+                       // echo $result2->num_rows;
                         
 
                         session_start();
@@ -54,6 +57,7 @@
                             header("Location: adminhome.php");
                         } else if($userType == "Student") {
                             $_SESSION['username'] = $_POST['username'];
+                            $_SESSION['user_id'] = $user_id;
                             header("Location: home.php");
                         } else {
                             echo "<div class='alert alert-danger' role='alert'>Login Unsuccessful</div>";
