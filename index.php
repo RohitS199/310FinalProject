@@ -53,7 +53,7 @@
                             $_SESSION['username'] = $_POST['username'];
                             header("Location: adminhome.php");
                         } else if($userType == "Student") {
-                            $_SESSION['username'] = $username;
+                            $_SESSION['username'] = $_POST['username'];
                             header("Location: home.php");
                         } else {
                             echo "<div class='alert alert-danger' role='alert'>Login Unsuccessful</div>";
