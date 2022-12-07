@@ -45,7 +45,7 @@
                                 $query = "SELECT * FROM `Professor`";
                                 $result = mysqli_query($db, $query);
                                 while($row = mysqli_fetch_assoc($result)) {
-                                    echo "<option value='" . $row['lastName'] . "'>" . $row['lastName'] . "</option>";
+                                    echo "<option value='" . $row['lastName'] . "'>" . $row['firstName'] . $row['lastName'] . "</option>";
                                 }
                             ?>
                         </select>
@@ -98,6 +98,9 @@
                         }
                     ?>
                 </form>
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='home.php'">Return Home</button>
+                </div>
             </div>
         </div>
     </div>

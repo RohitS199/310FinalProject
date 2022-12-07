@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Document</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="mainStyle.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script src="extensions/editable/bootstrap-table-editable.js"></script>
@@ -12,18 +13,13 @@
         <script type="text/javascript" src="custom_table_edit.js"></script>
     </head>
 
-    <nav class="navbar navbar-dark bg-primary">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="home.php">Class Search</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="home.php">Home</a></li>
-                <li><a href="search.php">Search</a></li>
-                <li><a href="index.php">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="custom_navbar">
+        <a href="/addcomment.php"><div>Add Comment</div></a>
+        <a href="/userClassSearch.php"><div>Class Search</div></a>
+        <a href="/userProfessorSearch.php"><div>Professor Search</div></a>
+        <a href="/logout.php"><div>Logout</div></a>
+        <a href="/userUserSearch.php"><div>Schedule a meeting with a User</div></a>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -33,7 +29,6 @@
                     $username = $_SESSION['username'];
                     $user_id = $_SESSION['user_id'];
                     echo $username;
-                    //echo $user_id;
                 ?> !</h2>
             </div>
         </div>
