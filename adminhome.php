@@ -42,58 +42,11 @@
                     echo $user_id;
                     echo $username;
                 ?> !</h2>
-                <h2>Here, you can manage comments and users</h2>
+                <h2>Here, you can manage users, professors, classes, and comments</h2>
             </div>
         </div>
     </div>
-
-    <div class="container">
-    <h1 class="text-center">Comments</h1>
-	<table id="commentsTable" class="table table-bordered table-responsive-md table-striped text-center">
-		<thead>
-			<tr>
-				<th>ID</th>
-                <th>User ID</th>
-				<th>Course Name</th>
-				<th>Grade</th>
-				<th>Comment</th>
-				<th>Professor ID</th>
-               
-			</tr>
-		</thead>
-		<tbody>
-			<?php 
-			include_once("config.php");
-            if($db === false){
-                die("ERROR: Could not connect. " . mysqli_connect_error());
-            }
-			$sqlQuery = "SELECT comment_id, comment, user_id, course_name, letterGrade, professor_id FROM comment";
-			$result = mysqli_query($db, $sqlQuery) or die("database error:". mysqli_error($db));
-            if ($result->num_rows > 0) {
-
-			while( $row = mysqli_fetch_assoc($result) ) {
-			?>
-			   <tr id="<?php echo $row ['comment_id']; ?>">
-			    <td><?php echo $row ['comment_id']; ?></td>
-			    <td><?php echo $row ['user_id']; ?></td>
-                <td><?php echo $row ['course_name']; ?></td>
-                <td><?php echo $row ['letterGrade']; ?></td> 		   
-                <td><?php echo $row ['comment']; ?></td> 
-                <td><?php echo $row ['professor_id']; ?></td>   
-                
-			   </tr>
-			<?php } 
-            }
-            else {
-                echo "0 results";
-            }
-            
-            ?>
-		</tbody>
-    </table>
-    </div>
     
-
     <div class="container">
     <h1 class="text-center">Users</h1>
 	<table id="usersTable" class="table table-bordered table-responsive-md table-striped text-center">
@@ -149,10 +102,145 @@
     </table>
     </div>
    
-    
-</body>
+    <div class="container">
+    <h1 class="text-center">Professors</h1>
+	<table id="professorsTable" class="table table-bordered table-responsive-md table-striped text-center">
+		<thead>
+			<tr>
+				<th>ID</th>
+                <th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Phone Number</th>
+				<th>Office Location</th>
+                <th>Years at School</th>
+                <th>Password</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php 
+			include_once("config.php");
+            if($db === false){
+                die("ERROR: Could not connect. " . mysqli_connect_error());
+            }
+			$sqlQuery = "SELECT professor_id, firstName, email, lastName, phone_number, password, officeLocation, yearsatSchool FROM professor";
+			$result = mysqli_query($db, $sqlQuery) or die("database error:". mysqli_error($db));
+            if ($result->num_rows > 0) {
 
-<script type="text/javascript" src="js/edit.js"></script>
+			while( $row = mysqli_fetch_assoc($result) ) {
+			?>
+			   <tr id="<?php echo $row ['professor_id']; ?>">
+			    <td><?php echo $row ['professor_id']; ?></td>
+			    <td><?php echo $row ['firstName']; ?></td>
+                <td><?php echo $row ['lastName']; ?></td>
+                <td><?php echo $row ['email']; ?></td>
+                <td><?php echo $row ['phone_number']; ?></td> 		   
+                <td><?php echo $row ['officeLocation']; ?></td> 
+                <td><?php echo $row ['yearsatSchool']; ?></td> 
+                <td><?php echo $row ['password']; ?></td>   
+                
+			   </tr>
+			<?php } 
+            }
+            else {
+                echo "0 results";
+            }
+            
+            ?>
+		</tbody>
+    </table>
+    </div>
+    
+    <div class="container">
+    <h1 class="text-center">Classes</h1>
+	<table id="classesTable" class="table table-bordered table-responsive-md table-striped text-center">
+		<thead>
+			<tr>
+				<th>ID</th>
+                <th>Course Name</th>
+				<th>Course Description</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<?php 
+			include_once("config.php");
+            if($db === false){
+                die("ERROR: Could not connect. " . mysqli_connect_error());
+            }
+			$sqlQuery = "SELECT class_id, course_name, course_description FROM class";
+			$result = mysqli_query($db, $sqlQuery) or die("database error:". mysqli_error($db));
+            if ($result->num_rows > 0) {
+
+			while( $row = mysqli_fetch_assoc($result) ) {
+			?>
+			   <tr id="<?php echo $row ['class_id']; ?>">
+			    <td><?php echo $row ['class_id']; ?></td>
+			    <td><?php echo $row ['course_name']; ?></td>
+                <td><?php echo $row ['course_description']; ?></td>
+                
+                
+			   </tr>
+			<?php } 
+            }
+            else {
+                echo "0 results";
+            }
+            
+            ?>
+		</tbody>
+    </table>
+    </div>
+
+    <div class="container">
+    <h1 class="text-center">Comments</h1>
+	<table id="commentsTable" class="table table-bordered table-responsive-md table-striped text-center">
+		<thead>
+			<tr>
+				<th>ID</th>
+                <th>User ID</th>
+				<th>Course Name</th>
+				<th>Grade</th>
+				<th>Comment</th>
+				<th>Professor ID</th>
+               
+			</tr>
+		</thead>
+		<tbody>
+			<?php 
+			include_once("config.php");
+            if($db === false){
+                die("ERROR: Could not connect. " . mysqli_connect_error());
+            }
+			$sqlQuery = "SELECT comment_id, comment, user_id, course_name, letterGrade, professor_id FROM comment";
+			$result = mysqli_query($db, $sqlQuery) or die("database error:". mysqli_error($db));
+            if ($result->num_rows > 0) {
+
+			while( $row = mysqli_fetch_assoc($result) ) {
+			?>
+			   <tr id="<?php echo $row ['comment_id']; ?>">
+			    <td><?php echo $row ['comment_id']; ?></td>
+			    <td><?php echo $row ['user_id']; ?></td>
+                <td><?php echo $row ['course_name']; ?></td>
+                <td><?php echo $row ['letterGrade']; ?></td> 		   
+                <td><?php echo $row ['comment']; ?></td> 
+                <td><?php echo $row ['professor_id']; ?></td>   
+                
+			   </tr>
+			<?php } 
+            }
+            else {
+                echo "0 results";
+            }
+            
+            ?>
+		</tbody>
+    </table>
+    </div>
+
+</body>
+<script type="text/javascript" src="js/edittable.js"></script>
+
 </html>
             
   
