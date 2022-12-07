@@ -38,8 +38,7 @@
                     if(isset($_POST['username']) && isset($_POST['password'])){
                         $username = $_POST['username'];
                         $password = $_POST['password'];
-                        echo $username;
-                        echo $password;
+                        
                         $query = "SELECT * FROM `Users` WHERE `password` LIKE '$password' AND `userName` LIKE '$username';";
                         $query2 = "SELECT user_id FROM `Users` WHERE `password` LIKE '$password' AND `userName` LIKE '$username';";
                         include 'config.php';

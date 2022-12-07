@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $username = $_SESSION['username'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,15 +58,14 @@
 
                     <button type="submit" class="btn btn-default">Submit</button>
                     <?php
+
+                        
                         if(isset($_POST['course_name']) && isset($_POST['grade']) && isset($_POST['comment']) && isset($_POST['professor_last_name'])) {
                             $course_name = $_POST['course_name'];
                             $grade = $_POST['grade'];
                             $comment = $_POST['comment'];
                             $professor_last_name = $_POST['professor_last_name'];
                             
-                            session_start();
-                            $username = $_SESSION['username'];
-                            $username = 'nikki';
 
                             // given the username, get the user_id
                             include 'config.php';
@@ -99,6 +103,9 @@
                         }
                     ?>
                 </form>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" onclick="window.location.href='home.php'">Return Home</button>
             </div>
         </div>
     </div>
