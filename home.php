@@ -54,6 +54,12 @@
             if($db === false){
                 die("ERROR: Could not connect. " . mysqli_connect_error());
             }
+            // get the user_id based on the username
+            $sqlQuery = "SELECT user_id FROM Users WHERE username='$username'";
+            $result = mysqli_query($db, $sqlQuery) or die("database error:". mysqli_error($db));
+            $row = mysqli_fetch_assoc($result);
+            $user_id = $row['user_id'];
+
 			$sqlQuery = "SELECT comment_id, comment, user_id, course_name, letterGrade, professor_id FROM comment WHERE user_id=$user_id";
 			$result = mysqli_query($db, $sqlQuery) or die("database error:". mysqli_error($db));
             if ($result->num_rows > 0) {

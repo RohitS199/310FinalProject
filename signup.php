@@ -89,11 +89,13 @@
                                 $db->query($query);
 
                                 if($userType == "Student") {
+                                    session_start();
+                                    $_SESSION['username'] = $username;
                                     header("Location: home.php");
                                 }
                                 else {
                                     session_start();
-                                    $_SESSION['username'] = $_POST['username'];
+                                    $_SESSION['username'] = $username;
                                     header("Location: adminhome.php");
                                 }
                             } else {
