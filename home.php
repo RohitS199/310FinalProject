@@ -17,7 +17,7 @@
         <a href="/addcomment.php"><div>Add Comment</div></a>
         <a href="/userClassSearch.php"><div>Class Search</div></a>
         <a href="/userProfessorSearch.php"><div>Professor Search</div></a>
-        <a href="/logout.php"><div>Logout</div></a>
+        <a href="/index.php"><div>Logout</div></a>
         <a href="/userUserSearch.php"><div>Schedule a meeting with a User</div></a>
     </div>
     <div class="container">

@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>Admin Home</title>
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
-        <!-- <script src="extensions/editable/bootstrap-table-editable.js"></script> -->
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script type="text/javascript" src="jquery/jquery.tabledit.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+        <title>Document</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <!-- <script type="text/javascript" src="custom_table_edit.js"></script> -->
-        
+        <link rel="stylesheet" href="mainStyle.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="extensions/editable/bootstrap-table-editable.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="dist/jquery.tabledit.js"></script>
+        <script type="text/javascript" src="custom_table_edit.js"></script>
     </head>
 
 
-    <nav class="navbar navbar-dark bg-primary">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="home.php">Class Search</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="home.php">Home</a></li>
-                <li><a href="search.php">Search</a></li>
-                <li><a href="index.php">Logout</a></li>
-            </ul>
-        </div>
-    </nav>  
+    <div class="custom_navbar">
+        <a href="/index.php"><div>Logout</div></a>
+    </div>
 
 
 <body>  
