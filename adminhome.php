@@ -3,21 +3,19 @@
     <head>
     <meta charset="UTF-8">
         <title>Document</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="mainStyle.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script src="extensions/editable/bootstrap-table-editable.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script type="text/javascript" src="dist/jquery.tabledit.js"></script>
-        <script type="text/javascript" src="custom_table_edit.js"></script>
+        <script type="text/javascript" src="jquery/jquery.tabledit.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- <script type="text/javascript" src="custom_table_edit.js"></script> -->
     </head>
 
 
     <div class="custom_navbar">
         <a href="/index.php"><div>Logout</div></a>
     </div>
-
+    <script type="text/javascript" src="js/edittable.js"></script>
 
 <body>  
 
@@ -235,7 +233,7 @@
     </div>
 
 </body>
-<script type="text/javascript" src="js/edittable.js"></script>
+
 
 </html>
             
