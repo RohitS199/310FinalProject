@@ -8,30 +8,61 @@
   <head>
       <meta charset="UTF-8">
       <title>Document</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="mainStyle.css">
+      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css"
+  rel="stylesheet"
+/>
+    <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"
+></script>
   </head>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Add Comment</h1>
+  
+  <section class="vh-100" style="background-color: #508bfc; overflow:hidden">
+  
+  <div class="container py-5 h-100">
+ 
+    <div class="row d-flex justify-content-center align-items-center h-100">
+    
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+          <h1>Add Comment</h1>
                 <form action="addcomment.php" method="post">
-                    <div class="form-group">
-                        <label for="grade">
+                
+                    <div class="form-outline mb-4">
+                        <input type="text" name="grade" class="form-control form-control-lg" id="grade">
+                        <label class="form-label" for="grade" >
                             Grade
                         </label>
-                        <input type="text" name="grade" class="form-control" id="grade">
                     </div>
-                    <div class="form-group">
-                        <label for="comment">
+                    <div class="form-outline mb-4">
+                        <input type="text" name="comment" class="form-control form-control-lg" id="comment">
+                        <label class="form-label" for="comment">
                             Comment
                         </label>
-                        <input type="text" name="comment" class="form-control" id="comment">
                     </div>
-                    <div class="form-group">
-                        <label for="course_name">Class Name</label>
-                        <select name="course_name" class="form-control" id="course_name">
+                    <label for="course_name">Class Name</label>
+                    <div class="form-outline mb-4">
+                        <select name="course_name" class="form-control form-control-lg" id="course_name">
                             <?php
                                 include 'config.php';
                                 $query = "SELECT * FROM `Class`";
@@ -42,9 +73,9 @@
                             ?>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="professor_last_name">Professor First Name</label>
-                        <select name="professor_last_name" class="form-control" id="professor_last_name">
+                    <label for="professor_last_name">Professor First Name</label>
+                    <div class="form-outline mb-4">
+                        <select name="professor_last_name" class="form-control form-control-lg" id="professor_last_name">
                             <?php
                                 include 'config.php';
                                 $query = "SELECT * FROM `Professor`";
@@ -56,7 +87,7 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
                     <?php
 
                         
@@ -103,10 +134,18 @@
                         }
                     ?>
                 </form>
+                <hr class="my-4">
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary btn-block" onclick="window.location.href='home.php'">Return Home</button>
+                </div>
             </div>
-            <div class="text-center">
-                <button type="button" class="btn btn-primary" onclick="window.location.href='home.php'">Return Home</button>
-            </div>
-        </div>
-    </div>
+
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        </section>
+                
+      
 </html>

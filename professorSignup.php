@@ -3,13 +3,42 @@
     <head>
         <meta charset="UTF-8">
         <title>Document</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="mainStyle.css">
+      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css"
+  rel="stylesheet"
+/>
+    <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"
+></script>
     </head>
-    <div class = "container">
-        <div class = "row">
-            <h1>Professor Sign Up</h1>
+    <section class="vh-100" style="background-color: #508bfc; overflow:hidden">
+  
+  <div class="container py-5 h-100">
+ 
+    <div class="row d-flex justify-content-center align-items-center h-100">
+   
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+          <h1>Professor Sign Up</h1>
             <form action = "professorSignup.php" method = "post">
                 <div class = "form-group">
                     <label for = "username">Username</label>
@@ -43,12 +72,12 @@
                         <label for="password">Password</label>
                         <input type="password" name="password" class="form-control" id="password">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-4">
                         <label for="confirmPassword">Confirm Password</label>
                         <input type="password" name="confirmPassword" class="form-control" id="confirmPassword">
                     </div>
 
-                    <button type = "submit" class = "btn btn-default">Submit</button>
+                    <button type = "submit" class = "btn btn-primary btn-lg btn-block mb-4">Submit</button>
                     <!-- on submit upload the data to the database and make sure the password match-->
                     <?php
                         if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['email']) && isset($_POST['phoneNumber']) && isset($_POST['officeLocation']) && isset($_POST['yearsAtSchool']) && isset($_POST['confirmPassword'])){
@@ -75,11 +104,16 @@
                             }
                         }
                     ?>
-                    
-                <a href = "index.php" class = "btn btn-default">User Sign In</a>
-                <a href = "professorLogin.php" class = "btn btn-default">Professor Sign In</a>
-            </form>
+                 <hr class="my-4">
+                <a href = "index.php" class = "btn btn-primary btn-lg btn-block mb-4">User Sign In</a>
+                <a href = "professorLogin.php" class = "btn btn-primary btn-lg btn-block">Professor Sign In</a>
+          
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</section>
+    
 </html>
   
