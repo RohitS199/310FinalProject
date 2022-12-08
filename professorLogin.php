@@ -13,8 +13,8 @@
             <h1>Professor Sign In</h1>
             <form action = "professorLogin.php" method = "post">
                 <div class = "form-group">
-                    <label for = "username">Username</label>
-                    <input type = "text" name = "username" class = "form-control" id = "username">
+                    <label for = "username">Email</label>
+                    <input type = "text" name = "email" class = "form-control" id = "email">
                 </div>
                 <div class = "form-group">
                     <label for = "password">Password</label>
@@ -22,17 +22,26 @@
                 </div>
                 <button type = "submit" class = "btn btn-default">Submit</button>
                 <?php
-                    if(isset($_POST['username']) && isset($_POST['password'])){
-                        $username = $_POST['username'];
+                    if(isset($_POST['email']) && isset($_POST['password'])){
+                        $email = $_POST['email'];
                         $password = $_POST['password'];
-                        $query = "INSERT INTO `Professor` (`professor_id`, `firstName`, `email`, `lastName`, `phone_number`, `password`, `officeLocation`, `yearsatSchool`) VALUES (NULL, '$username', '$password', 'lastName', 'phone_number', 'password', 'officeLocation', 'yearsatSchool')";
+                        $query = "SELECT * FROM `Professor` WHERE `password` LIKE '$password' AND `email` LIKE '$email';";
+                        $query2 = "SELECT professor_id FROM `Professor` WHERE `password` LIKE '$password' AND `email` LIKE '$email';";
                         include 'config.php';
-                        $result = mysqli_query($db, $query);
-                        if($result){
-                            echo "You are logged in";
-                        } else {
-                            echo "You are not logged in";
-                        }
+                        $result = $db->query($query);
+                        $profFirst = $result->fetch_assoc()['firstName'];
+                        $result2 = $db->query($query2);
+                        $profesor_id = $result2->fetch_assoc()['professor_id'];
+                        session_start();
+                        $_SESSION['profFirst'] = $profFirst;
+                        $_SESSION['professor_id'] = $profesor_id;
+                        header("Location: professorhome.php");
+                        // $result = mysqli_query($db, $query);
+                        // if($result){
+                        //     echo "You are logged in";
+                        // } else {
+                        //     echo "You are not logged in";
+                        // }
                     }
                 ?>
                 <a href = "index.php" class = "btn btn-default">User Sign In</a>
