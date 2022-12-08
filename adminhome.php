@@ -13,7 +13,8 @@
 
 
     <div class="custom_navbar">
-        <a href="/index.php"><div>Logout</div></a>
+        <a href="/logout.php"><div>Logout</div></a>
+        <a href="/addclass.php"><div>Add Class</div></a>
     </div>
     <script type="text/javascript" src="js/edittable.js"></script>
 

@@ -42,7 +42,7 @@
                             $username = $row['username'];
                             $graduationYear = $row['gradYear'];
                             $major = $row['major'];
-                            $classification = $row['classification'];
+                            $classification = $row['classifications'];
 
                             echo "<h2>First Name: " . $firstName . "</h2>";
                             echo "<h2>Last Name: " . $lastName . "</h2>";
