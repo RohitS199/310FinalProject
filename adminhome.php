@@ -207,7 +207,8 @@
             if($db === false){
                 die("ERROR: Could not connect. " . mysqli_connect_error());
             }
-			$sqlQuery = "SELECT comment_id, comment, user_id, course_name, letterGrade, professor_id FROM comment";
+			// $sqlQuery = "SELECT comment_id, comment, user_id, course_name, letterGrade, professor_id FROM comment";
+            $sqlQuery = "SELECT * FROM COMMENTWOCLASSID";
 			$result = mysqli_query($db, $sqlQuery) or die("database error:". mysqli_error($db));
             if ($result->num_rows > 0) {
 
