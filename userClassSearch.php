@@ -29,7 +29,7 @@
 ></script>
   </head>
   <!-- let a user select a class from drop down menu -->
-  <section class="vh-100" style="background-color: #508bfc; overflow:hidden">
+  <section class="vh-100" style="background-color: #508bfc; ">
   
   <div class="container py-5 h-100">
  

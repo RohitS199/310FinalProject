@@ -28,7 +28,7 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"
 ></script>
     </head>
-    <section class="vh-100" style="background-color: #508bfc; overflow:hidden">
+    <section class="vh-100" style="background-color: #508bfc;">
   
   <div class="container py-5 h-100">
  
