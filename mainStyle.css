@@ -20,3 +20,14 @@
     background-color: #ADD8E6;
     color: black;
   }
+
+  .title {
+    color: black;
+    font-weight: bold;
+  }
+
+  .form-outline {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+  
+  }  
