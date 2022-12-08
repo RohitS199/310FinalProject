@@ -64,7 +64,7 @@
 
                             // given the username, get the user_id
                             include 'config.php';
-                            $query1 = "SELECT user_id FROM `Users` WHERE `userName` LIKE '$username'";
+                            $query1 = "SELECT user_id FROM `secureuser` WHERE `userName` LIKE '$username'";
                             $result1 = mysqli_query($db, $query1);
                             $row1 = mysqli_fetch_assoc($result1);
                             $user_id = $row1['user_id'];

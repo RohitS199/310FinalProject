@@ -31,7 +31,7 @@
                     <?php
                         if(isset($_POST['userName'])) {
                             $userName = $_POST['userName'];
-                            $query = "SELECT * FROM `Users` WHERE userName = '$userName'";
+                            $query = "SELECT * FROM `secureuser` WHERE userName = '$userName'";
                             $result = mysqli_query($db, $query);
                             $row = mysqli_fetch_assoc($result);
 

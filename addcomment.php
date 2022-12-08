@@ -69,7 +69,7 @@
 
                             // given the username, get the user_id
                             include 'config.php';
-                            $query1 = "SELECT user_id FROM `Users` WHERE `userName` LIKE '$username'";
+                            $query1 = "SELECT user_id FROM `secureuser` WHERE `userName` LIKE '$username'";
                             $result1 = mysqli_query($db, $query1);
                             $row1 = mysqli_fetch_assoc($result1);
                             $user_id = $row1['user_id'];
@@ -81,7 +81,7 @@
                             $class_id = $row2['class_id'];
 
                             //given the professor's last name, get the professor_id
-                            $query3 = "SELECT professor_id FROM `Professor` WHERE `lastName` LIKE '$professor_last_name'";
+                            $query3 = "SELECT professor_id FROM `profsecure` WHERE `lastName` LIKE '$professor_last_name'";
                             $result3 = mysqli_query($db, $query3);
                             $row3 = mysqli_fetch_assoc($result3);
                             $professor_id = $row3['professor_id'];

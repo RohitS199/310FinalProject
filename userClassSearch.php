@@ -55,7 +55,7 @@
 
                                 // from the user id, get the user's first and last name
                                 $user_id = $row['user_id'];
-                                $query2 = "SELECT * FROM `Users` WHERE `user_id` = '$user_id'";
+                                $query2 = "SELECT * FROM `secureuser` WHERE `user_id` = '$user_id'";
                                 $result3 = mysqli_query($db, $query2);
                                 $row3 = mysqli_fetch_assoc($result3);
                                 $name = $row3['firstName'] . " " . $row3['lastName'];

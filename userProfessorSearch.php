@@ -36,7 +36,7 @@
                             $result = mysqli_query($db, $query);
 
                             // get the first name and last name of the professor given the professor_id
-                            $query2 = "SELECT * FROM `Professor` WHERE `professor_id` = '$professor_id'";
+                            $query2 = "SELECT * FROM `profsecure` WHERE `professor_id` = '$professor_id'";
                             $result2 = mysqli_query($db, $query2);
                             $row2 = mysqli_fetch_assoc($result2);
                             $professorName = $row2['firstName'] . " " . $row2['lastName'];
