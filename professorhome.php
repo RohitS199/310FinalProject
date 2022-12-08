@@ -15,7 +15,7 @@
 
     <div class="custom_navbar">
         
-        <a href="/index.php"><div>Logout</div></a>
+        <a href="/logout.php"><div>Logout</div></a>
        
     </div>
     <div class="container">
