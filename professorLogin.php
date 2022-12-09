@@ -42,7 +42,7 @@
           <h1>Professor Sign In</h1>
             <form action = "professorLogin.php" method = "post">
                 <div class = "form-group mb-4">
-                    <label for = "username">Email</label>
+                    <label for = "email">Email</label>
                     <input type = "text" name = "email" class = "form-control" id = "email">
                 </div>
                 <div class = "form-group mb-4">
@@ -64,13 +64,14 @@
                         session_start();
                         $_SESSION['profFirst'] = $profFirst;
                         $_SESSION['professor_id'] = $profesor_id;
-                        header("Location: professorhome.php");
+                        // header("Location: professorhome.php");
                         // $result = mysqli_query($db, $query);
-                        // if($result){
-                        //     echo "You are logged in";
-                        // } else {
-                        //     echo "You are not logged in";
-                        // }
+                        if($result){
+                            echo "You are logged in";
+                            header("Location: professorhome.php");
+                        } else {
+                            echo "<div class='alert alert-danger' role='alert'> make sure your email and password are correct </div>";
+                        }
                     }
                 ?>
                  <hr class="my-4">

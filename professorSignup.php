@@ -98,9 +98,10 @@
                                     echo "You are logged in";
                                 } else {
                                     echo "You are not logged in";
+                                    echo "<div class='alert alert-danger' role='alert'> Not correctly signed up</div>";
                                 }
                             } else {
-                                echo "Passwords do not match";
+                                echo "<div class='alert alert-danger' role='alert'> Passwords do not match</div>";
                             }
                         }
                     ?>
